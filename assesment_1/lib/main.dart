@@ -17,7 +17,8 @@ class _statemy extends State<MyApp> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.grey, Colors.deepPurple])),
+            gradient: LinearGradient(colors: [
+              Colors.grey, Colors.deepPurple])),
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
@@ -109,7 +110,11 @@ class _statemy extends State<MyApp> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(15),
                                         color: Colors.pink),
-                                    child: TextButton(
+                                    child: ElevatedButton(
+                                        style: ButtonStyle(
+                                            backgroundColor:
+                                                WidgetStatePropertyAll(
+                                                    Colors.pink)),
                                         onPressed: () {},
                                         child: const Text(
                                           'REGISTER',

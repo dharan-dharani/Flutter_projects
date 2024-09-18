@@ -19,78 +19,82 @@ class Homepage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white,
                   ),
-                  child: Row(
-                    children: [
-                      const SizedBox(width: 70),
-                      Container(
-                        width: 150,
-                        child: ListTile(
-                          title: Text('Flipkart',
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(width: 70),
+                        Container(
+                          width: 150,
+                          child: ListTile(
+                            title: Text('Flipkart',
+                                style: TextStyle(
+                                    fontSize: 30,
+                                    fontStyle: FontStyle.italic,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue[900])),
+                            subtitle: const Text(
+                              'Explore Plus',
                               style: TextStyle(
-                                  fontSize: 30,
+                                  fontSize: 15,
                                   fontStyle: FontStyle.italic,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.blue[900])),
-                          subtitle: const Text(
-                            'Explore Plus',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontStyle: FontStyle.italic,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey),
+                                  color: Colors.grey),
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(width: 70),
-                      Container(
-                          width: 350,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                                hintText:
-                                    'Search for Products, Brands and more',
-                                prefixIcon: const Icon(Icons.search),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(15))),
-                          )),
-                      const SizedBox(width: 50),
-                      InkWell(
-                        onTap: () {
-                          print('object2');
-                        },
-                        onHover: (value) {
-                          Color.fromARGB(255, 33, 8, 175);
-                          print('object');
-                        },
-                        child: Container(
-                          width: 170,
+                        SizedBox(width: 70),
+                        Container(
+                            width: 350,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  hintText:
+                                      'Search for Products, Brands and more',
+                                  prefixIcon: const Icon(Icons.search),
+                                  border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(15))),
+                            )),
+                        SizedBox(width: 50),
+                        InkWell(
+                          onTap: () {
+                            print('object2');
+                          },
+                          onHover: (value) {
+                            Color.fromARGB(255, 33, 8, 175);
+                            print('object');
+                          },
+                          child: Container(
+                            width: 170,
+                            child: ListTile(
+                              leading: Icon(Icons.account_circle_rounded),
+                              title: Text('Login'),
+                              trailing: Icon(Icons.arrow_drop_down_sharp),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 30),
+                        Container(
+                          width: 140,
                           child: ListTile(
-                            leading: Icon(Icons.account_circle_rounded),
-                            title: Text('Login'),
-                            trailing: Icon(Icons.arrow_drop_down_sharp),
+                            leading: Icon(Icons.shopping_cart_outlined),
+                            title: Text('Cart'),
                           ),
                         ),
-                      ),
-                      const SizedBox(width: 30),
-                      Container(
-                        width: 140,
-                        child: ListTile(
-                          leading: Icon(Icons.shopping_cart_outlined),
-                          title: Text('Cart'),
+                        SizedBox(width: 30),
+                        Container(
+                          width: 200,
+                          child: ListTile(
+                            leading: Icon(Icons.sell_outlined),
+                            title: Text('Become a seller'),
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 30),
-                      Container(
-                        width: 200,
-                        child: ListTile(
-                          leading: Icon(Icons.sell_outlined),
-                          title: Text('Become a seller'),
-                        ),
-                      ),
-                      const SizedBox(width: 30),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.more_vert_outlined))
-                    ],
+                        SizedBox(width: 30),
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.more_vert_outlined))
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -112,195 +116,199 @@ class Homepage extends StatelessWidget {
                         )),
                       ),
                       Container(
-                        child: Row(
-                          children: [
-                            const SizedBox(width: 30),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('earphone.jpg'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'TrueWireless Headphones',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              const SizedBox(width: 30),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('earphone.jpg'),
                                     ),
-                                    subtitle: Text(
-                                      'Grab Now',
-                                      style: TextStyle(fontSize: 12),
-                                    ),
-                                  )
-                                ],
+                                    const ListTile(
+                                      title: Text(
+                                        'TrueWireless Headphones',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'Grab Now',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('bluetoothspeaker.png'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Bluetooth Speaker',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child:
+                                          Image.asset('bluetoothspeaker.png'),
                                     ),
-                                    subtitle: Text(
-                                      'JBL Brand',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Bluetooth Speaker',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'JBL Brand',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('smartwatch.jpg'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Smart Watch',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('smartwatch.jpg'),
                                     ),
-                                    subtitle: Text(
-                                      'New Features',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Smart Watch',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'New Features',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('iphone.jpg'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Smart Phone',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('iphone.jpg'),
                                     ),
-                                    subtitle: Text(
-                                      'IPhone 15',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Smart Phone',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'IPhone 15',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('tablet.jpg'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Best Tab',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('tablet.jpg'),
                                     ),
-                                    subtitle: Text(
-                                      'Windows Tab',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Best Tab',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'Windows Tab',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('moniter.png'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Samsung Brand',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('moniter.png'),
                                     ),
-                                    subtitle: Text(
-                                      'LED Moniter',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Samsung Brand',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'LED Moniter',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 20),
@@ -326,195 +334,198 @@ class Homepage extends StatelessWidget {
                         )),
                       ),
                       Container(
-                        child: Row(
-                          children: [
-                            const SizedBox(width: 30),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('earphone.jpg'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'TrueWireless Headphones',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              const SizedBox(width: 30),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('fridge.jpg'),
                                     ),
-                                    subtitle: Text(
-                                      'Grab Now',
-                                      style: TextStyle(fontSize: 12),
-                                    ),
-                                  )
-                                ],
+                                    const ListTile(
+                                      title: Text(
+                                        'Refridgerator ',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'Godrej',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('bluetoothspeaker.png'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Bluetooth Speaker',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('cooker.webp'),
                                     ),
-                                    subtitle: Text(
-                                      'JBL Brand',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Prestige',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'Cooker',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('smartwatch.jpg'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Smart Watch',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('dinning.webp'),
                                     ),
-                                    subtitle: Text(
-                                      'New Features',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Classic',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'Furniture',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('iphone.jpg'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Smart Phone',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('mixergrinder.jpg'),
                                     ),
-                                    subtitle: Text(
-                                      'IPhone 15',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Mixer',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'ORPAD',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('tablet.jpg'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Best Tab',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('washing.png'),
                                     ),
-                                    subtitle: Text(
-                                      'Windows Tab',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Washing Machine',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'LG',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            Container(
-                              width: 200,
-                              height: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(
-                                    color: Colors.grey,
-                                  )),
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    width: 120,
-                                    height: 120,
-                                    child: Image.asset('moniter.png'),
-                                  ),
-                                  const ListTile(
-                                    title: Text(
-                                      'Samsung Brand',
-                                      style: TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                              const SizedBox(width: 20),
+                              Container(
+                                width: 200,
+                                height: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    border: Border.all(
+                                      color: Colors.grey,
+                                    )),
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: 120,
+                                      height: 120,
+                                      child: Image.asset('stove.jpg'),
                                     ),
-                                    subtitle: Text(
-                                      'LED Moniter',
-                                      style: TextStyle(fontSize: 12),
+                                    const ListTile(
+                                      title: Text(
+                                        'Cusimax ',
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      subtitle: Text(
+                                        'Induction Stove',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(height: 20),
@@ -523,479 +534,485 @@ class Homepage extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 10),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                'Best Formal Shirts',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 10),
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  'Best Formal Shirts',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
-                            ),
-                            Row(
-                              children: [
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('s1.png'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Formal Shirt',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
+                              Row(
+                                children: [
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('s1.png'),
                                         ),
-                                        subtitle: Text(
-                                          'Blue',
-                                          style: TextStyle(fontSize: 12),
+                                        const ListTile(
+                                          title: Text(
+                                            'Formal Shirt',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Blue',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('s2.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Formal Shirt',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('s2.jpg'),
                                         ),
-                                        subtitle: Text(
-                                          'Red Checked Shirt',
-                                          style: TextStyle(fontSize: 12),
+                                        const ListTile(
+                                          title: Text(
+                                            'Formal Shirt',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Red Checked Shirt',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(width: 12),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Row(
-                              children: [
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('s3.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Formal Shirt',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        subtitle: Text(
-                                          'Light Blue',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('s4.png'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Formal Shirt',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        subtitle: Text(
-                                          'White',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 20),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 10),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                'Sport Shoes',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                  SizedBox(width: 12),
+                                ],
                               ),
-                            ),
-                            Row(
-                              children: [
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('shoe.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Nike Shoe',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
+                              SizedBox(height: 10),
+                              Row(
+                                children: [
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('s3.jpg'),
                                         ),
-                                        subtitle: Text(
-                                          'Blue-Deepblue',
-                                          style: TextStyle(fontSize: 12),
+                                        const ListTile(
+                                          title: Text(
+                                            'Formal Shirt',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Light Blue',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('shoe2.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Adidas',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('s4.png'),
                                         ),
-                                        subtitle: Text(
-                                          'LightGreen',
-                                          style: TextStyle(fontSize: 12),
+                                        const ListTile(
+                                          title: Text(
+                                            'Formal Shirt',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'White',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(width: 12),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Row(
-                              children: [
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('shoe3.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Sports Pick',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        subtitle: Text(
-                                          'Grey',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('shoe4.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Recommended',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        subtitle: Text(
-                                          'Grab Soon',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 20),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: Colors.white,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 10),
-                            Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                'Mens Products',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                                  SizedBox(width: 12),
+                                ],
                               ),
-                            ),
-                            Row(
-                              children: [
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('perfume.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Luxify',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        subtitle: Text(
-                                          'Ultra Male',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('showergel.webp'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'Greeko men',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        subtitle: Text(
-                                          'Shower & Face wash Gel',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Row(
-                              children: [
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('bodywash.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'The Man Company',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        subtitle: Text(
-                                          'Face Wash',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                                Container(
-                                  width: 200,
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: Colors.grey,
-                                      )),
-                                  child: Column(
-                                    children: [
-                                      SizedBox(
-                                        width: 120,
-                                        height: 120,
-                                        child: Image.asset('perfume2.jpg'),
-                                      ),
-                                      const ListTile(
-                                        title: Text(
-                                          'TrueFitt & Hill',
-                                          style: TextStyle(
-                                              fontSize: 13,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        subtitle: Text(
-                                          'Sandalwood',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 12),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                          ],
+                              SizedBox(height: 10),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 20),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 10),
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  'Sport Shoes',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('shoe.jpg'),
+                                        ),
+                                        const ListTile(
+                                          title: Text(
+                                            'Nike Shoe',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Blue-Deepblue',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('shoe2.jpg'),
+                                        ),
+                                        const ListTile(
+                                          title: Text(
+                                            'Adidas',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'LightGreen',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                              Row(
+                                children: [
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('shoe3.jpg'),
+                                        ),
+                                        const ListTile(
+                                          title: Text(
+                                            'Sports Pick',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Grey',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('shoe4.jpg'),
+                                        ),
+                                        const ListTile(
+                                          title: Text(
+                                            'Recommended',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Grab Soon',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 20),
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Colors.white,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: 10),
+                              Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  'Mens Products',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('perfume.jpg'),
+                                        ),
+                                        const ListTile(
+                                          title: Text(
+                                            'Luxify',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Ultra Male',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('showergel.webp'),
+                                        ),
+                                        const ListTile(
+                                          title: Text(
+                                            'Greeko men',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Shower & Face wash Gel',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                              Row(
+                                children: [
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('bodywash.jpg'),
+                                        ),
+                                        const ListTile(
+                                          title: Text(
+                                            'The Man Company',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Face Wash',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                  Container(
+                                    width: 200,
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
+                                          color: Colors.grey,
+                                        )),
+                                    child: Column(
+                                      children: [
+                                        SizedBox(
+                                          width: 120,
+                                          height: 120,
+                                          child: Image.asset('perfume2.jpg'),
+                                        ),
+                                        const ListTile(
+                                          title: Text(
+                                            'TrueFitt & Hill',
+                                            style: TextStyle(
+                                                fontSize: 13,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          subtitle: Text(
+                                            'Sandalwood',
+                                            style: TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(width: 12),
+                                ],
+                              ),
+                              SizedBox(height: 10),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: 10),

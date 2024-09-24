@@ -1,2 +1,2 @@
-Simple Widgets in Flutter
+Simple Widgets in Flutter,
 Basic of Getx 

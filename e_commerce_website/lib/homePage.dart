@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
   const Homepage({super.key});
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  Color _normalcolor = Colors.white;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +27,7 @@ class Homepage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white,
                   ),
+                  width: double.infinity,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -49,6 +58,8 @@ class Homepage extends StatelessWidget {
                             width: 350,
                             child: TextFormField(
                               decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: Colors.blue[50],
                                   hintText:
                                       'Search for Products, Brands and more',
                                   prefixIcon: const Icon(Icons.search),
@@ -61,11 +72,18 @@ class Homepage extends StatelessWidget {
                             print('object2');
                           },
                           onHover: (value) {
-                            Color.fromARGB(255, 33, 8, 175);
+                            setState(() {
+                              _normalcolor = value ? Colors.blue : Colors.white;
+                            });
+
                             print('object');
                           },
                           child: Container(
                             width: 170,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: _normalcolor,
+                            ),
                             child: ListTile(
                               leading: Icon(Icons.account_circle_rounded),
                               title: Text('Login'),
@@ -103,6 +121,7 @@ class Homepage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white,
                   ),
+                  width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -321,6 +340,7 @@ class Homepage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white,
                   ),
+                  width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

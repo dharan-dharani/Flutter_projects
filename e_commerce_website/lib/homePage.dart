@@ -1042,175 +1042,178 @@ class _HomepageState extends State<Homepage> {
                   color: Colors.black,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              // color: Colors.amber,
-                              height: 150,
-                              width: 300,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('About',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15)),
-                                  Text(
-                                    'Contact us',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text('About us',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Careers',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Flipkart Stories',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Press',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Corporate Information',
-                                      style: TextStyle(color: Colors.white)),
-                                ],
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                // color: Colors.amber,
+                                height: 150,
+                                width: 300,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('About',
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15)),
+                                    Text(
+                                      'Contact us',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text('About us',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Careers',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Flipkart Stories',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Press',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Corporate Information',
+                                        style: TextStyle(color: Colors.white)),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 20),
-                            Container(
-                              //color: Colors.amber,
-                              height: 150,
-                              width: 300,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Group Companies',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15)),
-                                  Text(
-                                    'Myntra',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text('Cleartrip',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Shopsy',
-                                      style: TextStyle(color: Colors.white)),
-                                ],
+                              SizedBox(width: 20),
+                              Container(
+                                //color: Colors.amber,
+                                height: 150,
+                                width: 300,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Group Companies',
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15)),
+                                    Text(
+                                      'Myntra',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text('Cleartrip',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Shopsy',
+                                        style: TextStyle(color: Colors.white)),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 20),
-                            Container(
-                              //  color: Colors.amber,
-                              height: 150,
-                              width: 300,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Help',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15)),
-                                  Text(
-                                    ' Payments',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text('Shipping',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Cancellation and Returns',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('FAQ',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Report',
-                                      style: TextStyle(color: Colors.white)),
-                                ],
+                              SizedBox(width: 20),
+                              Container(
+                                //  color: Colors.amber,
+                                height: 150,
+                                width: 300,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Help',
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15)),
+                                    Text(
+                                      ' Payments',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text('Shipping',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Cancellation and Returns',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('FAQ',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Report',
+                                        style: TextStyle(color: Colors.white)),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 20),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              //color: Colors.amber,
-                              height: 150,
-                              width: 300,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Consumer Policy',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15)),
-                                  Text(
-                                    'Cancellation & Returns',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text('Terms of Use',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Security',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Privacy',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('SiteMap',
-                                      style: TextStyle(color: Colors.white)),
-                                  Text('Grievance',
-                                      style: TextStyle(color: Colors.white)),
-                                ],
+                              SizedBox(width: 20),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                //color: Colors.amber,
+                                height: 150,
+                                width: 300,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Consumer Policy',
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15)),
+                                    Text(
+                                      'Cancellation & Returns',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text('Terms of Use',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Security',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Privacy',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('SiteMap',
+                                        style: TextStyle(color: Colors.white)),
+                                    Text('Grievance',
+                                        style: TextStyle(color: Colors.white)),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 5),
-                            Container(
-                              // color: Colors.amber,
-                              height: 150,
-                              width: 300,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Mail Us',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15)),
-                                  Text(
-                                    'Flipkart Internet private limited,',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text('flipkart@gmail.com',
-                                      style: TextStyle(color: Colors.white)),
-                                ],
+                              SizedBox(width: 5),
+                              Container(
+                                // color: Colors.amber,
+                                height: 150,
+                                width: 300,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Mail Us',
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15)),
+                                    Text(
+                                      'Flipkart Internet private limited,',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text('flipkart@gmail.com',
+                                        style: TextStyle(color: Colors.white)),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 5),
-                            Container(
-                              // color: Colors.amber,
-                              height: 150,
-                              width: 300,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text('Registered office',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15)),
-                                  Text(
-                                    ' Flipkart Internet private limited,',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text('Telephone : ',
-                                      style: TextStyle(color: Colors.white)),
-                                ],
+                              SizedBox(width: 5),
+                              Container(
+                                // color: Colors.amber,
+                                height: 150,
+                                width: 300,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Registered office',
+                                        style: TextStyle(
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15)),
+                                    Text(
+                                      ' Flipkart Internet private limited,',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text('Telephone : ',
+                                        style: TextStyle(color: Colors.white)),
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(width: 12),
-                          ],
-                        ),
-                      ],
+                              SizedBox(width: 12),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

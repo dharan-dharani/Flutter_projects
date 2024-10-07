@@ -9,9 +9,136 @@ class MainPage extends StatefulWidget {
 class Home extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
+    //  final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    print(width);
+
+    Widget containwidgets2(String img, String place) {
+      return InkWell(
+        onTap: () {},
+        child: SizedBox(
+            height: 200,
+            width: 150,
+            child: Stack(fit: StackFit.expand, children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image(fit: BoxFit.cover, image: AssetImage(img)),
+              ),
+               Positioned(
+                
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                                            place,
+                                            style: TextStyle(color: Colors.white),
+                                          ),
+                      ),
+                    ],
+                  ))
+            ])),
+      );
+    }
+
+    Widget containWidgets(String imagePath) {
+      return SizedBox(
+        height: 300,
+        width: 270,
+        child: Column(
+          children: [
+            Container(
+              child: InkWell(
+                onTap: () {},
+                child: SizedBox(
+                    height: 150,
+                    width: 250,
+                    child: Stack(fit: StackFit.expand, children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                            fit: BoxFit.cover, image: AssetImage(imagePath)),
+                      ),
+                      Positioned(
+                          top: 10,
+                          right: 5,
+                          child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: const CircleBorder(),
+                                padding: const EdgeInsets.all(16),
+                              ),
+                              onPressed: () {},
+                              child: const Icon(
+                                Icons.favorite,
+                                color: Color.fromARGB(255, 187, 186, 186),
+                              ))),
+                    ])),
+              ),
+            ),
+            Container(
+              width: 270,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ListTile(
+                      title: RichText(
+                        text: const TextSpan(children: [
+                          TextSpan(
+                              text: '\$120',
+                              style: TextStyle(
+                                  fontSize: 22, fontWeight: FontWeight.bold)),
+                          TextSpan(
+                              text: '/Night',
+                              style: TextStyle(
+                                  fontSize: 12, fontWeight: FontWeight.bold)),
+                          WidgetSpan(
+                              child: Icon(
+                            Icons.bolt,
+                            size: 16,
+                            color: Colors.amber,
+                          )),
+                        ]),
+                      ),
+                      trailing: SizedBox(
+                        height: 20,
+                        width: 40,
+                        child: RichText(
+                          text: const TextSpan(children: [
+                            WidgetSpan(
+                              child: Icon(
+                                Icons.star,
+                                size: 15,
+                                color: Colors.pink,
+                              ),
+                            ),
+                            TextSpan(text: '4', style: TextStyle(fontSize: 13))
+                          ]),
+                        ),
+                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 14.0),
+                    child: Text(
+                      'Carinthia Lake Sea Breakfast...',
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 14.0),
+                    child: Text(
+                      'Private Room / 4 Beds',
+                      style: TextStyle(fontSize: 13),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.all(8.0),
@@ -36,7 +163,7 @@ class Home extends State<MainPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
-                        width: width /1.5,
+                        width: width / 1.5,
                         child: TextFormField(
                           decoration: InputDecoration(
                               fillColor: Colors.white,
@@ -48,25 +175,24 @@ class Home extends State<MainPage> {
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(color: Colors.white),
-                                 borderRadius: BorderRadius.circular(15),
+                                borderRadius: BorderRadius.circular(15),
                               ),
                               focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
-                                 borderRadius: BorderRadius.circular(15),
-                              )
-                              ),
+                                borderSide: BorderSide(color: Colors.white),
+                                borderRadius: BorderRadius.circular(15),
+                              )),
                         ),
                       ),
                       Container(
                           child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                
+                              style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                padding: EdgeInsets.all(20),
                               ),
-                              padding: EdgeInsets.all(20),
-                            ),
-                              onPressed: () {}, child: const Icon(Icons.tune)))
+                              onPressed: () {},
+                              child: const Icon(Icons.tune)))
                     ],
                   ),
                 ],
@@ -81,167 +207,25 @@ class Home extends State<MainPage> {
               child: Row(
                 children: [
                   const SizedBox(width: 10),
-                  InkWell(
-                    onTap: () {},
-                    child: SizedBox(
-                        height: 200,
-                        width: 150,
-                        child: Stack(fit: StackFit.expand, children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: const Image(
-                                fit: BoxFit.cover,
-                                image: AssetImage('temple.jpg')),
-                          ),
-                          const Positioned(
-                              top: 170,
-                              right: 40,
-                              child: Center(
-                                  child: Text(
-                                'TamilNadu',
-                                style: TextStyle(color: Colors.white),
-                              )))
-                        ])),
-                  ),
+                  containwidgets2('temple.jpg', 'TamilNadu'),
                   const SizedBox(width: 10),
-                  InkWell(
-                    onTap: () {},
-                    child: SizedBox(
-                        height: 200,
-                        width: 150,
-                        child: Stack(fit: StackFit.expand, children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: const Image(
-                                fit: BoxFit.cover,
-                                image: AssetImage('meenakshi_amman.jpg')),
-                          ),
-                          const Positioned(
-                              top: 170,
-                              right: 40,
-                              child: Center(
-                                  child: Text(
-                                'TamilNadu',
-                                style: TextStyle(color: Colors.white),
-                              )))
-                        ])),
-                  ),
+                  containwidgets2('TajMahal.jpg', 'India'),
                   const SizedBox(width: 10),
-                  InkWell(
-                    onTap: () {},
-                    child: SizedBox(
-                        height: 200,
-                        width: 150,
-                        child: Stack(fit: StackFit.expand, children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: const Image(
-                                fit: BoxFit.cover,
-                                image: AssetImage('usa.webp')),
-                          ),
-                          const Positioned(
-                              top: 170,
-                              right: 60,
-                              child: Center(
-                                  child: Text(
-                                'USA',
-                                style: TextStyle(color: Colors.white),
-                              )))
-                        ])),
-                  ),
+                  containwidgets2('tpk.jpg', 'TamilNadu'),
                   const SizedBox(width: 10),
-                  InkWell(
-                    onTap: () {},
-                    child: SizedBox(
-                        height: 200,
-                        width: 150,
-                        child: Stack(fit: StackFit.expand, children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: const Image(
-                                fit: BoxFit.cover,
-                                image: AssetImage('TajMahal.jpg')),
-                          ),
-                          const Positioned(
-                              top: 170,
-                              right: 55,
-                              child: Center(
-                                  child: Text(
-                                'Agra',
-                                style: TextStyle(color: Colors.white),
-                              )))
-                        ])),
-                  ),
+                  containwidgets2('Great-Wall.jpg', 'China'),
                   const SizedBox(width: 10),
-                  InkWell(
-                    onTap: () {},
-                    child: SizedBox(
-                        height: 200,
-                        width: 150,
-                        child: Stack(fit: StackFit.expand, children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: const Image(
-                                fit: BoxFit.cover,
-                                image: AssetImage('temple.jpg')),
-                          ),
-                          const Positioned(
-                              top: 170,
-                              right: 40,
-                              child: Center(
-                                  child: Text(
-                                'TamilNadu',
-                                style: TextStyle(color: Colors.white),
-                              )))
-                        ])),
-                  ),
+                  containwidgets2('Eiffel_Tower.jpg', 'Paris'),
                   const SizedBox(width: 10),
-                  InkWell(
-                    onTap: () {},
-                    child: SizedBox(
-                        height: 200,
-                        width: 150,
-                        child: Stack(fit: StackFit.expand, children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: const Image(
-                                fit: BoxFit.cover,
-                                image: AssetImage('temple.jpg')),
-                          ),
-                          const Positioned(
-                              top: 170,
-                              right: 40,
-                              child: Center(
-                                  child: Text(
-                                'TamilNadu',
-                                style: TextStyle(color: Colors.white),
-                              )))
-                        ])),
-                  ),
+                  containwidgets2('meenakshi_amman.jpg', 'TamilNadu'),
                   const SizedBox(width: 10),
-                  InkWell(
-                    onTap: () {},
-                    child: SizedBox(
-                        height: 200,
-                        width: 150,
-                        child: Stack(fit: StackFit.expand, children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: const Image(
-                                fit: BoxFit.cover,
-                                image: AssetImage('temple.jpg')),
-                          ),
-                          const Positioned(
-                              top: 170,
-                              right: 40,
-                              child: Center(
-                                  child: Text(
-                                'TamilNadu',
-                                style: TextStyle(color: Colors.white),
-                              )))
-                        ])),
-                  )
-                ],
+                  containwidgets2('burjkhalifa.jpg', 'Dubai'),
+                  const SizedBox(width: 10),
+                  containwidgets2('Redfort.webp', 'Delhi'),
+                  const SizedBox(width: 10),
+                  containwidgets2('usa.webp', 'USA'),
+                 
+                                  ],
               ),
             ),
             const SizedBox(height: 20),
@@ -256,814 +240,15 @@ class Home extends State<MainPage> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  SizedBox(
-                    height: 300,
-                    width: 270,
-                    child: Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () {},
-                            child: SizedBox(
-                                height: 150,
-                                width: 250,
-                                child: Stack(fit: StackFit.expand, children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: const Image(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('temple.jpg')),
-                                  ),
-                                  Positioned(
-                                      top: 10,
-                                      right: 5,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: const CircleBorder(),
-                                            padding: const EdgeInsets.all(16),
-                                          ),
-                                          onPressed: () {},
-                                          child: const Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 187, 186, 186),
-                                          ))),
-                                ])),
-                          ),
-                        ),
-                        Container(
-                          width: 270,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                  title: RichText(
-                                    text: const TextSpan(children: [
-                                      TextSpan(
-                                          text: '\$120',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text: '/Night',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.bolt,
-                                        size: 16,
-                                        color: Colors.amber,
-                                      )),
-                                    ]),
-                                  ),
-                                  trailing: SizedBox(
-                                    height: 20,
-                                    width: 40,
-                                    child: RichText(
-                                      text: const TextSpan(children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 15,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                            text: '4',
-                                            style: TextStyle(fontSize: 13))
-                                      ]),
-                                    ),
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Carinthia Lake Sea Breakfast...',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Private Room / 4 Beds',
-                                  style: TextStyle(fontSize: 13),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    width: 270,
-                    child: Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () {},
-                            child: SizedBox(
-                                height: 150,
-                                width: 250,
-                                child: Stack(fit: StackFit.expand, children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: const Image(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('temple.jpg')),
-                                  ),
-                                  Positioned(
-                                      top: 10,
-                                      right: 5,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: const CircleBorder(),
-                                            padding: const EdgeInsets.all(16),
-                                          ),
-                                          onPressed: () {},
-                                          child: const Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 187, 186, 186),
-                                          ))),
-                                ])),
-                          ),
-                        ),
-                        Container(
-                          width: 270,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                  title: RichText(
-                                    text: const TextSpan(children: [
-                                      TextSpan(
-                                          text: '\$120',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text: '/Night',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.bolt,
-                                        size: 16,
-                                        color: Colors.amber,
-                                      )),
-                                    ]),
-                                  ),
-                                  trailing: SizedBox(
-                                    height: 20,
-                                    width: 40,
-                                    child: RichText(
-                                      text: const TextSpan(children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 15,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                            text: '4',
-                                            style: TextStyle(fontSize: 13))
-                                      ]),
-                                    ),
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Carinthia Lake Sea Breakfast...',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Private Room / 4 Beds',
-                                  style: TextStyle(fontSize: 13),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    width: 270,
-                    child: Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () {},
-                            child: SizedBox(
-                                height: 150,
-                                width: 250,
-                                child: Stack(fit: StackFit.expand, children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: const Image(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('temple.jpg')),
-                                  ),
-                                  Positioned(
-                                      top: 10,
-                                      right: 5,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: const CircleBorder(),
-                                            padding: const EdgeInsets.all(16),
-                                          ),
-                                          onPressed: () {},
-                                          child: const Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 187, 186, 186),
-                                          ))),
-                                ])),
-                          ),
-                        ),
-                        Container(
-                          width: 270,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                  title: RichText(
-                                    text: const TextSpan(children: [
-                                      TextSpan(
-                                          text: '\$120',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text: '/Night',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.bolt,
-                                        size: 16,
-                                        color: Colors.amber,
-                                      )),
-                                    ]),
-                                  ),
-                                  trailing: SizedBox(
-                                    height: 20,
-                                    width: 40,
-                                    child: RichText(
-                                      text: const TextSpan(children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 15,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                            text: '4',
-                                            style: TextStyle(fontSize: 13))
-                                      ]),
-                                    ),
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Carinthia Lake Sea Breakfast...',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Private Room / 4 Beds',
-                                  style: TextStyle(fontSize: 13),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    width: 270,
-                    child: Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () {},
-                            child: SizedBox(
-                                height: 150,
-                                width: 250,
-                                child: Stack(fit: StackFit.expand, children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: const Image(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('temple.jpg')),
-                                  ),
-                                  Positioned(
-                                      top: 10,
-                                      right: 5,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: const CircleBorder(),
-                                            padding: const EdgeInsets.all(16),
-                                          ),
-                                          onPressed: () {},
-                                          child: const Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 187, 186, 186),
-                                          ))),
-                                ])),
-                          ),
-                        ),
-                        Container(
-                          width: 270,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                  title: RichText(
-                                    text: const TextSpan(children: [
-                                      TextSpan(
-                                          text: '\$120',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text: '/Night',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.bolt,
-                                        size: 16,
-                                        color: Colors.amber,
-                                      )),
-                                    ]),
-                                  ),
-                                  trailing: SizedBox(
-                                    height: 20,
-                                    width: 40,
-                                    child: RichText(
-                                      text: const TextSpan(children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 15,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                            text: '4',
-                                            style: TextStyle(fontSize: 13))
-                                      ]),
-                                    ),
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Carinthia Lake Sea Breakfast...',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Private Room / 4 Beds',
-                                  style: TextStyle(fontSize: 13),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    width: 270,
-                    child: Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () {},
-                            child: SizedBox(
-                                height: 150,
-                                width: 250,
-                                child: Stack(fit: StackFit.expand, children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: const Image(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('temple.jpg')),
-                                  ),
-                                  Positioned(
-                                      top: 10,
-                                      right: 5,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: const CircleBorder(),
-                                            padding: const EdgeInsets.all(16),
-                                          ),
-                                          onPressed: () {},
-                                          child: const Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 187, 186, 186),
-                                          ))),
-                                ])),
-                          ),
-                        ),
-                        Container(
-                          width: 270,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                  title: RichText(
-                                    text: const TextSpan(children: [
-                                      TextSpan(
-                                          text: '\$120',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text: '/Night',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.bolt,
-                                        size: 16,
-                                        color: Colors.amber,
-                                      )),
-                                    ]),
-                                  ),
-                                  trailing: SizedBox(
-                                    height: 20,
-                                    width: 40,
-                                    child: RichText(
-                                      text: const TextSpan(children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 15,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                            text: '4',
-                                            style: TextStyle(fontSize: 13))
-                                      ]),
-                                    ),
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Carinthia Lake Sea Breakfast...',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Private Room / 4 Beds',
-                                  style: TextStyle(fontSize: 13),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    width: 270,
-                    child: Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () {},
-                            child: SizedBox(
-                                height: 150,
-                                width: 250,
-                                child: Stack(fit: StackFit.expand, children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: const Image(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('temple.jpg')),
-                                  ),
-                                  Positioned(
-                                      top: 10,
-                                      right: 5,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: const CircleBorder(),
-                                            padding: const EdgeInsets.all(16),
-                                          ),
-                                          onPressed: () {},
-                                          child: const Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 187, 186, 186),
-                                          ))),
-                                ])),
-                          ),
-                        ),
-                        Container(
-                          width: 270,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                  title: RichText(
-                                    text: const TextSpan(children: [
-                                      TextSpan(
-                                          text: '\$120',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text: '/Night',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.bolt,
-                                        size: 16,
-                                        color: Colors.amber,
-                                      )),
-                                    ]),
-                                  ),
-                                  trailing: SizedBox(
-                                    height: 20,
-                                    width: 40,
-                                    child: RichText(
-                                      text: const TextSpan(children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 15,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                            text: '4',
-                                            style: TextStyle(fontSize: 13))
-                                      ]),
-                                    ),
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Carinthia Lake Sea Breakfast...',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Private Room / 4 Beds',
-                                  style: TextStyle(fontSize: 13),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    width: 270,
-                    child: Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () {},
-                            child: SizedBox(
-                                height: 150,
-                                width: 250,
-                                child: Stack(fit: StackFit.expand, children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: const Image(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('temple.jpg')),
-                                  ),
-                                  Positioned(
-                                      top: 10,
-                                      right: 5,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: const CircleBorder(),
-                                            padding: const EdgeInsets.all(16),
-                                          ),
-                                          onPressed: () {},
-                                          child: const Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 187, 186, 186),
-                                          ))),
-                                ])),
-                          ),
-                        ),
-                        Container(
-                          width: 270,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                  title: RichText(
-                                    text: const TextSpan(children: [
-                                      TextSpan(
-                                          text: '\$120',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text: '/Night',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.bolt,
-                                        size: 16,
-                                        color: Colors.amber,
-                                      )),
-                                    ]),
-                                  ),
-                                  trailing: SizedBox(
-                                    height: 20,
-                                    width: 40,
-                                    child: RichText(
-                                      text: const TextSpan(children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 15,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                            text: '4',
-                                            style: TextStyle(fontSize: 13))
-                                      ]),
-                                    ),
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Carinthia Lake Sea Breakfast...',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Private Room / 4 Beds',
-                                  style: TextStyle(fontSize: 13),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 300,
-                    width: 270,
-                    child: Column(
-                      children: [
-                        Container(
-                          child: InkWell(
-                            onTap: () {},
-                            child: SizedBox(
-                                height: 150,
-                                width: 250,
-                                child: Stack(fit: StackFit.expand, children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: const Image(
-                                        fit: BoxFit.cover,
-                                        image: AssetImage('temple.jpg')),
-                                  ),
-                                  Positioned(
-                                      top: 10,
-                                      right: 5,
-                                      child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: const CircleBorder(),
-                                            padding: const EdgeInsets.all(16),
-                                          ),
-                                          onPressed: () {},
-                                          child: const Icon(
-                                            Icons.favorite,
-                                            color: Color.fromARGB(
-                                                255, 187, 186, 186),
-                                          ))),
-                                ])),
-                          ),
-                        ),
-                        Container(
-                          width: 270,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ListTile(
-                                  title: RichText(
-                                    text: const TextSpan(children: [
-                                      TextSpan(
-                                          text: '\$120',
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.bold)),
-                                      TextSpan(
-                                          text: '/Night',
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold)),
-                                      WidgetSpan(
-                                          child: Icon(
-                                        Icons.bolt,
-                                        size: 16,
-                                        color: Colors.amber,
-                                      )),
-                                    ]),
-                                  ),
-                                  trailing: SizedBox(
-                                    height: 20,
-                                    width: 40,
-                                    child: RichText(
-                                      text: const TextSpan(children: [
-                                        WidgetSpan(
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 15,
-                                            color: Colors.pink,
-                                          ),
-                                        ),
-                                        TextSpan(
-                                            text: '4',
-                                            style: TextStyle(fontSize: 13))
-                                      ]),
-                                    ),
-                                  )),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Carinthia Lake Sea Breakfast...',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 14.0),
-                                child: Text(
-                                  'Private Room / 4 Beds',
-                                  style: TextStyle(fontSize: 13),
-                                ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
+                  containWidgets('1.jpg'),
+                  containWidgets('2.jpg'),
+                  containWidgets('3.jpg'),
+                  containWidgets('4.jpg'),
+                  containWidgets('5.jpg'),
+                  containWidgets('6.jpg'),
+                  containWidgets('house2.jpg'),
+                  containWidgets('house5.webp'),
+                  containWidgets('housse4.webp'),
                 ],
               ),
             ),
@@ -1075,13 +260,12 @@ class Home extends State<MainPage> {
                   onTap: () {},
                   child: SizedBox(
                       height: 150,
-                      width: 250,
+                      width: 350,
                       child: Stack(fit: StackFit.expand, children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: const Image(
-                              fit: BoxFit.cover,
-                              image: AssetImage('nature.jpg')),
+                              fit: BoxFit.cover, image: AssetImage('girl.jpg')),
                         ),
                         Positioned(
                             top: 50,
@@ -1093,7 +277,7 @@ class Home extends State<MainPage> {
                                   'Hosting Fee for /as low as 1%',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.white),
+                                      color: Colors.black),
                                 ),
                                 subtitle: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
@@ -1115,398 +299,10 @@ class Home extends State<MainPage> {
               'Most Viewed',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
-            SizedBox(
-              height: 300,
-              width: 270,
-              child: Column(
-                children: [
-                  Container(
-                    child: InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                          height: 150,
-                          width: 250,
-                          child: Stack(fit: StackFit.expand, children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: const Image(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage('temple.jpg')),
-                            ),
-                            Positioned(
-                                top: 10,
-                                right: 5,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      shape: const CircleBorder(),
-                                      padding: const EdgeInsets.all(16),
-                                    ),
-                                    onPressed: () {},
-                                    child: const Icon(
-                                      Icons.favorite,
-                                      color: Color.fromARGB(255, 187, 186, 186),
-                                    ))),
-                          ])),
-                    ),
-                  ),
-                  Container(
-                    width: 270,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                            title: RichText(
-                              text: const TextSpan(children: [
-                                TextSpan(
-                                    text: '\$120',
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold)),
-                                TextSpan(
-                                    text: '/Night',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold)),
-                                WidgetSpan(
-                                    child: Icon(
-                                  Icons.bolt,
-                                  size: 16,
-                                  color: Colors.amber,
-                                )),
-                              ]),
-                            ),
-                            trailing: SizedBox(
-                              height: 20,
-                              width: 40,
-                              child: RichText(
-                                text: const TextSpan(children: [
-                                  WidgetSpan(
-                                    child: Icon(
-                                      Icons.star,
-                                      size: 15,
-                                      color: Colors.pink,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                      text: '4', style: TextStyle(fontSize: 13))
-                                ]),
-                              ),
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 14.0),
-                          child: Text(
-                            'Carinthia Lake Sea Breakfast...',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 14.0),
-                          child: Text(
-                            'Private Room / 4 Beds',
-                            style: TextStyle(fontSize: 13),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 300,
-              width: 270,
-              child: Column(
-                children: [
-                  Container(
-                    child: InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                          height: 150,
-                          width: 250,
-                          child: Stack(fit: StackFit.expand, children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: const Image(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage('temple.jpg')),
-                            ),
-                            Positioned(
-                                top: 10,
-                                right: 5,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      shape: const CircleBorder(),
-                                      padding: const EdgeInsets.all(16),
-                                    ),
-                                    onPressed: () {},
-                                    child: const Icon(
-                                      Icons.favorite,
-                                      color: Color.fromARGB(255, 187, 186, 186),
-                                    ))),
-                          ])),
-                    ),
-                  ),
-                  Container(
-                    width: 270,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                            title: RichText(
-                              text: const TextSpan(children: [
-                                TextSpan(
-                                    text: '\$120',
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold)),
-                                TextSpan(
-                                    text: '/Night',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold)),
-                                WidgetSpan(
-                                    child: Icon(
-                                  Icons.bolt,
-                                  size: 16,
-                                  color: Colors.amber,
-                                )),
-                              ]),
-                            ),
-                            trailing: SizedBox(
-                              height: 20,
-                              width: 40,
-                              child: RichText(
-                                text: const TextSpan(children: [
-                                  WidgetSpan(
-                                    child: Icon(
-                                      Icons.star,
-                                      size: 15,
-                                      color: Colors.pink,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                      text: '4', style: TextStyle(fontSize: 13))
-                                ]),
-                              ),
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 14.0),
-                          child: Text(
-                            'Carinthia Lake Sea Breakfast...',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 14.0),
-                          child: Text(
-                            'Private Room / 4 Beds',
-                            style: TextStyle(fontSize: 13),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 300,
-              width: 270,
-              child: Column(
-                children: [
-                  Container(
-                    child: InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                          height: 150,
-                          width: 250,
-                          child: Stack(fit: StackFit.expand, children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: const Image(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage('temple.jpg')),
-                            ),
-                            Positioned(
-                                top: 10,
-                                right: 5,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      shape: const CircleBorder(),
-                                      padding: const EdgeInsets.all(16),
-                                    ),
-                                    onPressed: () {},
-                                    child: const Icon(
-                                      Icons.favorite,
-                                      color: Color.fromARGB(255, 187, 186, 186),
-                                    ))),
-                          ])),
-                    ),
-                  ),
-                  Container(
-                    width: 270,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                            title: RichText(
-                              text: const TextSpan(children: [
-                                TextSpan(
-                                    text: '\$120',
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold)),
-                                TextSpan(
-                                    text: '/Night',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold)),
-                                WidgetSpan(
-                                    child: Icon(
-                                  Icons.bolt,
-                                  size: 16,
-                                  color: Colors.amber,
-                                )),
-                              ]),
-                            ),
-                            trailing: SizedBox(
-                              height: 20,
-                              width: 40,
-                              child: RichText(
-                                text: const TextSpan(children: [
-                                  WidgetSpan(
-                                    child: Icon(
-                                      Icons.star,
-                                      size: 15,
-                                      color: Colors.pink,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                      text: '4', style: TextStyle(fontSize: 13))
-                                ]),
-                              ),
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 14.0),
-                          child: Text(
-                            'Carinthia Lake Sea Breakfast...',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 14.0),
-                          child: Text(
-                            'Private Room / 4 Beds',
-                            style: TextStyle(fontSize: 13),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 300,
-              width: 270,
-              child: Column(
-                children: [
-                  Container(
-                    child: InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                          height: 150,
-                          width: 250,
-                          child: Stack(fit: StackFit.expand, children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: const Image(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage('temple.jpg')),
-                            ),
-                            Positioned(
-                                top: 10,
-                                right: 5,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      shape: const CircleBorder(),
-                                      padding: const EdgeInsets.all(16),
-                                    ),
-                                    onPressed: () {},
-                                    child: const Icon(
-                                      Icons.favorite,
-                                      color: Color.fromARGB(255, 187, 186, 186),
-                                    ))),
-                          ])),
-                    ),
-                  ),
-                  Container(
-                    width: 270,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                            title: RichText(
-                              text: const TextSpan(children: [
-                                TextSpan(
-                                    text: '\$120',
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.bold)),
-                                TextSpan(
-                                    text: '/Night',
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold)),
-                                WidgetSpan(
-                                    child: Icon(
-                                  Icons.bolt,
-                                  size: 16,
-                                  color: Colors.amber,
-                                )),
-                              ]),
-                            ),
-                            trailing: SizedBox(
-                              height: 20,
-                              width: 40,
-                              child: RichText(
-                                text: const TextSpan(children: [
-                                  WidgetSpan(
-                                    child: Icon(
-                                      Icons.star,
-                                      size: 15,
-                                      color: Colors.pink,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                      text: '4', style: TextStyle(fontSize: 13))
-                                ]),
-                              ),
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 14.0),
-                          child: Text(
-                            'Carinthia Lake Sea Breakfast...',
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 14.0),
-                          child: Text(
-                            'Private Room / 4 Beds',
-                            style: TextStyle(fontSize: 13),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
+            containWidgets('6.jpg'),
+            containWidgets('house2.jpg'),
+            containWidgets('house5.webp'),
+            containWidgets('3.jpg'),
           ],
         ),
       ),

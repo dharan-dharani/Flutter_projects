@@ -9,118 +9,109 @@ class UI extends StatefulWidget {
 }
 
 class CalculatorState extends State<UI> {
-  Widget button(String bvalue) {
-    return InkWell(
-        onTap: () {
-           context.read<control>().calculation(bvalue);
-        },
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Text(
-            bvalue,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-          ),
-        ));
+
+  Widget button(String bvalue,Color bcolor) {
+    return
+      ElevatedButton(
+          style: ElevatedButton.styleFrom(backgroundColor: bcolor),
+          onPressed: (){ context.read<control>().calculation(bvalue);},
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              bvalue,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24,color: Colors.white),
+            ),
+          ));
   }
 
   @override
   Widget build(BuildContext context) {
+    final  height=MediaQuery.of(context).size.height;
     return
      Scaffold(
         appBar: AppBar(
           title: Text('Calculator'),
         ),
-        body: Center(
-          child: Container(
-            height: 500,
-            width: 450,
-            decoration: BoxDecoration(
-              color: Colors.teal[100],
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 150,
-                  padding: const EdgeInsets.all(8.0),
-                  alignment: Alignment.bottomRight,
-                  child: 
-                     Text(
-                      context.watch<control>().result,
-                      style: TextStyle(
-                        fontSize: 40,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    
-                  ),
+        body: Container(
+
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: height*0.3,
+                padding: const EdgeInsets.all(8.0),
+                alignment: Alignment.bottomRight,
+                child:
+                   Text(
+                    context.watch<control>().result,
+                    style: TextStyle(
+                      fontSize: 60,
+                      fontWeight: FontWeight.bold,
+                    ),
+
                 ),
-                Container(
-                    height: 350,
+              ),
+              Container(
+
+                  child: Container(
+                    height: height*0.59,
                     padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.black,
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(25),topRight: Radius.circular(25)),
                     ),
-                    child: Container(
-                      height: 350,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              button("AC"),
-                              button("C"),
-                              button("%"),
-                              button("/"),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              button("7"),
-                              button("8"),
-                              button("9"),
-                              button("x"),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              button("4"),
-                              button("5"),
-                              button("6"),
-                              button("-"),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              button("1"),
-                              button("2"),
-                              button("3"),
-                              button("+"),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              button("00"),
-                              button("0"),
-                              button("."),
-                              button("="),
-                            ],
-                          )
-                        ],
-                      ),
-                    ))
-              ],
-            ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            button("AC",Colors.greenAccent),
+                            button("C",Colors.greenAccent),
+                            button("%",Colors.deepOrangeAccent),
+                            button("/",Colors.deepOrangeAccent),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            button("7",Colors.white60),
+                            button("8",Colors.white60),
+                            button("9",Colors.white60),
+                            button("x",Colors.deepOrangeAccent),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            button("4",Colors.white60),
+                            button("5",Colors.white60),
+                            button("6",Colors.white60),
+                            button("-",Colors.deepOrangeAccent),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            button("1",Colors.white60),
+                            button("2",Colors.white60),
+                            button("3",Colors.white60),
+                            button("+",Colors.deepOrangeAccent),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            button("00",Colors.white60),
+                            button("0",Colors.white60),
+                            button(".",Colors.deepOrangeAccent),
+                            button("=",Colors.deepOrangeAccent),
+                          ],
+                        )
+                      ],
+                    ),
+                  ))
+            ],
           ),
         ),
       

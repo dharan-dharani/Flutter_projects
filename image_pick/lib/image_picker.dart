@@ -42,66 +42,74 @@ Future<void> _requestPermissions() async {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:AppBar(title: Text('Image Picker'),),
       body: Center(
-        child: InkWell(
-          onTap: () {
-            showModalBottomSheet(
-                context: context,
-                builder: (BuildContext context) {
-                  return Container(
-                    height: 88,
-                    width: MediaQuery.of(context).size.width,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(children: [
-                        InkWell(
-                          onTap: () {
-                            pickimage(ImageSource.camera);
-                          },
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.camera,
-                                size: 30,
-                              ),
-                              Text('Camera', style: TextStyle(fontSize: 25))
-                            ],
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () {
-                            pickimage(ImageSource.gallery);
-                          },
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.folder,
-                                size: 30,
-                              ),
-                              Text(
-                                'Gallery',
-                                style: TextStyle(fontSize: 25),
-                              )
-                            ],
-                          ),
-                        )
-                      ]),
-                    ),
-                  );
-                });
-          },
-          child: Container(
-            height: 200,
-            width: 250,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.grey[200]),
-            child:imagefile == null
-                ? Icon(Icons.add)
-                : Image.file(imagefile!),
+        child: Column(
 
- 
-          ),
+          children: [
+            Text('Take a picture or choose a image'),
+            SizedBox(height: 100),
+            InkWell(
+              onTap: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Container(
+                        height: 88,
+                        width: MediaQuery.of(context).size.width,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(children: [
+                            InkWell(
+                              onTap: () {
+                                pickimage(ImageSource.camera);
+                              },
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.camera,
+                                    size: 30,
+                                  ),
+                                  Text('Camera', style: TextStyle(fontSize: 25))
+                                ],
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                pickimage(ImageSource.gallery);
+                              },
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    Icons.folder,
+                                    size: 30,
+                                  ),
+                                  Text(
+                                    'Gallery',
+                                    style: TextStyle(fontSize: 25),
+                                  )
+                                ],
+                              ),
+                            )
+                          ]),
+                        ),
+                      );
+                    });
+              },
+              child: Container(
+                height: 200,
+                width: 250,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.grey[200]),
+                child:imagefile == null
+                    ? Icon(Icons.add)
+                    : Image.file(imagefile!),
+
+
+              ),
+            ),
+          ],
         ),
       ),
     );

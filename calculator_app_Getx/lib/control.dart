@@ -19,11 +19,11 @@ class control extends GetxController{
         bvalue == "x" ||
         bvalue == "/" ||
         bvalue == "%") {
-      num1.value = double.parse(input.value);
+      num1.value = int.parse(input.value);
       operand.value = bvalue;
       input.value = "";
     } else if (bvalue == "=") {
-      num2.value = double.parse(input.value);
+      num2.value = int.parse(input.value);
       if (operand == "+") {
         result.value = (num1.value + num2.value).toString();
       } else if (operand == "-") {

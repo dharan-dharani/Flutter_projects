@@ -1,0 +1,27 @@
+com.example.api_rest.app-lifecycle-viewmodel-2.7.0-0 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\0f1db7b17845c830b360565ba5ee2a66\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.api_rest.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-1 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\2418480ea096641b92932981af8e2183\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.api_rest.app-core-runtime-2.2.0-2 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\2485cbf932517a0387b5bd9da23bd080\transformed\core-runtime-2.2.0\res
+com.example.api_rest.app-jetified-lifecycle-process-2.7.0-3 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\40f6342734b86b0d14ab701d46defb15\transformed\jetified-lifecycle-process-2.7.0\res
+com.example.api_rest.app-jetified-lifecycle-livedata-core-ktx-2.7.0-4 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\6ffdf343047f056eb9ab6b2cd1b83ba1\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.example.api_rest.app-jetified-tracing-1.2.0-5 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\7af3679b9bf5dc5bcfa428b98ff8ca5d\transformed\jetified-tracing-1.2.0\res
+com.example.api_rest.app-jetified-window-1.2.0-6 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\828346581388e7362ecc987a5887dd5b\transformed\jetified-window-1.2.0\res
+com.example.api_rest.app-jetified-savedstate-1.2.1-7 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\840c5799adf346ea01f1c561dd542cbe\transformed\jetified-savedstate-1.2.1\res
+com.example.api_rest.app-jetified-startup-runtime-1.1.1-8 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\8a9870af5f32e6b2567c751a79cf488c\transformed\jetified-startup-runtime-1.1.1\res
+com.example.api_rest.app-jetified-window-java-1.2.0-9 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\941b6a5e3c935481b857eab5bb3c13e5\transformed\jetified-window-java-1.2.0\res
+com.example.api_rest.app-fragment-1.7.1-10 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\98643d7cd95742e78454be9ab3073bb0\transformed\fragment-1.7.1\res
+com.example.api_rest.app-jetified-activity-1.8.1-11 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\9867f20a933cfa9b560cac0d13f9f559\transformed\jetified-activity-1.8.1\res
+com.example.api_rest.app-core-1.13.1-12 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\9b834da5742663aeaac848343c635af8\transformed\core-1.13.1\res
+com.example.api_rest.app-lifecycle-livedata-core-2.7.0-13 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\9d8e254371f1f2b891d15bcb124b1573\transformed\lifecycle-livedata-core-2.7.0\res
+com.example.api_rest.app-jetified-core-ktx-1.13.1-14 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\b4fa1ad766b795ee0afc5c26ed72684e\transformed\jetified-core-ktx-1.13.1\res
+com.example.api_rest.app-lifecycle-runtime-2.7.0-15 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\d739c2ae7dea6835b69f605fa53e1c84\transformed\lifecycle-runtime-2.7.0\res
+com.example.api_rest.app-jetified-profileinstaller-1.3.1-16 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\dbda1f1d74d1c0eec0664c3e196c0327\transformed\jetified-profileinstaller-1.3.1\res
+com.example.api_rest.app-lifecycle-livedata-2.7.0-17 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\e0833c3af05bc7cb40bc829b464e5bb5\transformed\lifecycle-livedata-2.7.0\res
+com.example.api_rest.app-jetified-annotation-experimental-1.4.0-18 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\f0e13a12dccd625fef864995ad85ba88\transformed\jetified-annotation-experimental-1.4.0\res
+com.example.api_rest.app-jetified-core-1.0.0-19 C:\Users\Dharanidharan S\.gradle\caches\8.10\transforms\f1f9dd013709187f62932dc0732bc00a\transformed\jetified-core-1.0.0\res
+com.example.api_rest.app-debug-20 D:\Flutter_projects\api_rest\android\app\src\debug\res
+com.example.api_rest.app-main-21 D:\Flutter_projects\api_rest\android\app\src\main\res
+com.example.api_rest.app-pngs-22 D:\Flutter_projects\api_rest\build\app\generated\res\pngs\debug
+com.example.api_rest.app-resValues-23 D:\Flutter_projects\api_rest\build\app\generated\res\resValues\debug
+com.example.api_rest.app-packageDebugResources-24 D:\Flutter_projects\api_rest\build\app\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.api_rest.app-packageDebugResources-25 D:\Flutter_projects\api_rest\build\app\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.api_rest.app-merged_res-26 D:\Flutter_projects\api_rest\build\app\intermediates\merged_res\debug

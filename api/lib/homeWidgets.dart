@@ -34,7 +34,7 @@ class Home extends State<HomeWidgets>
         final email=User.email;
         final phone=User.phone;
         final gender=User.gender;
-        print(email);
+
         return ListTile(
           leading: Text('${index+1}'),
 

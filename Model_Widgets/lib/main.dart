@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:model_widgets/animatedText.dart';
-import 'package:model_widgets/radioButton.dart';
+import 'package:model_widgets/chip.dart';
+// import 'package:model_widgets/animatedText.dart';
+// import 'package:model_widgets/radioButton.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -9,13 +11,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Model Widgets',
-      home: RadioButton(),
+      home: ChipWidgets(),
     );
   }
 }

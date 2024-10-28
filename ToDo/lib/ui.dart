@@ -40,9 +40,7 @@ class _UiState extends State<Ui> {
 
   }
 
-  completed(){
 
-  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -95,7 +93,7 @@ class _UiState extends State<Ui> {
         actions: [
           TextButton(onPressed: (){
             textInput.clear();
-          }, child:const Text('Reset',
+            },child:const Text('Reset',
             style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.black),)),
           TextButton(onPressed: (){
            setState(() {

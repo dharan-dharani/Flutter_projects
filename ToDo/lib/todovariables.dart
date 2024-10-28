@@ -1,5 +1,6 @@
 class ToDo {
   String text;
   bool isDone;
-  ToDo({required this.text,this.isDone=false});
+  bool isSelect;
+  ToDo({required this.text,this.isDone=false,this.isSelect=false});
 }

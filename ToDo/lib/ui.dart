@@ -11,6 +11,8 @@ class Ui extends StatefulWidget {
 class _UiState extends State<Ui> {
   final TextEditingController textInput=TextEditingController();
   List<ToDo> todoList=[];
+  bool isSelect=false;
+
   addTheInputText(String text){
     todoList.add(ToDo(text:text));
   }
@@ -39,7 +41,6 @@ class _UiState extends State<Ui> {
     );
 
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -84,28 +85,78 @@ class _UiState extends State<Ui> {
                 );
 
                    }),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        showDialog(context: context, builder: (BuildContext context)=>
-         AlertDialog(title: const Text('Add a Text',style: TextStyle(color: Colors.black),),
-        content:TextField(
-          controller: textInput,
-        ),
-        actions: [
-          TextButton(onPressed: (){
-            textInput.clear();
-            },child:const Text('Reset',
-            style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.black),)),
-          TextButton(onPressed: (){
-           setState(() {
-             addTheInputText(textInput.text);
-             Navigator.pop(context);
-             textInput.clear();
-           });
-          }, child: const Text('Submit',
-              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15,color: Colors.black)))
-        ],)
-        );
-      },child: const Icon(Icons.add),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (BuildContext context) => StatefulBuilder(
+              builder: (context,setState) {
+                return AlertDialog(
+                  title: const Text(
+                    'Add a Text',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min, // Added to prevent stretching
+                    children: [
+                      TextField(
+                        controller: textInput,
+                      ),
+                      Center(
+                        child: Wrap(
+                          spacing: 10,
+                          children: [
+                            ChoiceChip(
+                              label: const Text('Favourite'),
+                              selected: isSelect,
+                              onSelected: (bool selected) {
+                                setState(() {
+                                  isSelect = selected;
+                                });
+                              },
+                              selectedColor: Colors.blue.shade100,
+                              avatar: isSelect ? const Icon(Icons.check) : null,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        textInput.clear();
+                        setState(() {
+                          isSelect = false; // Reset isSelect here
+                        });
+                      },
+                      child: const Text(
+                        'Reset',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        setState(() {
+                          addTheInputText(textInput.text);
+                          Navigator.pop(context);
+                          textInput.clear();
+                          isSelect = false; // Reset isSelect after submission
+                        });
+                      },
+                      child: const Text(
+                        'Submit',
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15, color: Colors.black),
+                      ),
+                    ),
+                  ],
+                );
+              }
+            ),
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }

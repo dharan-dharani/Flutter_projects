@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "199711111558",
+    "project_id": "loginauth-77420",
+    "storage_bucket": "loginauth-77420.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:199711111558:android:173a1bae3738c8d47c5407",
+        "android_client_info": {
+          "package_name": "com.example.shopping"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwAyTIi58jjyvrRRVd-T3fhlT0nYSCc3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

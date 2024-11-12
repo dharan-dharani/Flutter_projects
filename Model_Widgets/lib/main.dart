@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:model_widgets/dateandtimepickers.dart';
 // import 'package:model_widgets/chip.dart';
 // import 'package:model_widgets/dropDown.dart';
-import 'package:model_widgets/navigation/homepage.dart';
-import 'package:model_widgets/navigation/navigationrail.dart';
+// import 'package:model_widgets/navigation/homepage.dart';
+// import 'package:model_widgets/navigation/navigationrail.dart';
 // import 'package:model_widgets/animatedText.dart';
 // import 'package:model_widgets/radioButton.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Model Widgets',
-      home: NavigationRails(),
+      home: Dateandtimepickers(),
     );
   }
 }

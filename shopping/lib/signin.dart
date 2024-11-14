@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping/Services/signupAuth.dart';
+import 'package:shopping/forgetpassword.dart';
 import 'package:shopping/homescreen.dart';
 import 'package:shopping/signup.dart';
 
@@ -10,6 +13,7 @@ class Login extends StatefulWidget {
 
 class FormPage extends State<Login> {
   final _formkey = GlobalKey<FormState>();
+  final SignupAuth auth=SignupAuth();
   final TextEditingController _emailcontroller = TextEditingController();
   final TextEditingController _passwordcontroller = TextEditingController();
   @override
@@ -18,7 +22,21 @@ class FormPage extends State<Login> {
     _passwordcontroller.dispose();
     super.dispose();
   }
-
+  void signin() async {
+    String email=_emailcontroller.text.trim();
+    String password=_passwordcontroller.text.trim();
+    if (_formkey.currentState!.validate()) {
+      User? user=await auth.signin(email,password);
+      if(user!=null)
+      {
+        print('Successful');
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
+      }
+      else{
+        print('some error');
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +55,7 @@ class FormPage extends State<Login> {
                 children: [
                   const SizedBox(height: 10),
                   const Text(
-                    'Login',
+                    'Signin',
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 40,
@@ -82,13 +100,19 @@ class FormPage extends State<Login> {
                       return null;
                     },
                   ),
+                  Align(
+                      alignment: Alignment.bottomRight,
+                      child: TextButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Forgetpassword()));
+                      }, child: const Text('Forget Password?'))),
                   const SizedBox(height: 20),
                   OutlinedButton(
                     onPressed: () {
-                     Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
+                      signin();
+
                     },
                     child: const Text(
-                      'Login',
+                      'Signin',
                     ),
                   ),
                  const SizedBox(height: 20),

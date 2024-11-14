@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping/login.dart';
+import 'package:shopping/Services/signupAuth.dart';
+import 'package:shopping/homescreen.dart';
+import 'package:shopping/signin.dart';
 
 
 class SignUp extends StatefulWidget {
@@ -8,8 +11,10 @@ class SignUp extends StatefulWidget {
   Signup createState() => Signup();
 }
 
+
 class Signup extends State<SignUp> {
   final _checker = GlobalKey<FormState>();
+  final SignupAuth auth=SignupAuth();
   final TextEditingController _fcontroller = TextEditingController();
   final TextEditingController _lcontroller = TextEditingController();
   final TextEditingController _econtroller = TextEditingController();
@@ -23,14 +28,28 @@ class Signup extends State<SignUp> {
     _pcontroller.dispose();
     super.dispose();
   }
-  
 
+  void signupfun() async {
+    String email=_econtroller.text.trim();
+    String password=_pcontroller.text.trim();
+    if (_checker.currentState!.validate()) {
+      //   Navigator.push(
+      //       context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      // }
+      User? user=await auth.signup(email,password);
+      if(user!=null)
+        {
+          print('Successful');
+        }
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
-        title: const Text('Shopping',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white),),
+        title: const Text('Shopping', style: TextStyle(
+            fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -125,7 +144,7 @@ class Signup extends State<SignUp> {
                 const SizedBox(height: 20),
                 OutlinedButton(
                   onPressed: () {
-                    //validationfields();
+                    signupfun();
                   },
                   child: const Text(
                     'Signup',
@@ -139,7 +158,7 @@ class Signup extends State<SignUp> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Login( )),
+                              builder: (context) => const Login()),
                         );
                       },
                       child: const Text('Back to login Page')),
@@ -151,4 +170,5 @@ class Signup extends State<SignUp> {
       ),
     );
   }
-}
+    }
+
